@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALA JI FASHION - Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Jost', sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cart-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #EE1C47;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-table th {
+            background-color: #f1f1f1;
+            font-weight: 600;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .cart-item-name {
+            font-weight: 500;
+        }
+
+        .cart-item-price {
+            font-weight: 600;
+            color: #EE1C47;
+        }
+
+        .quantity-input {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .remove-item {
+            color: #EE1C47;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .remove-item:hover {
+            color: #d41a3f;
+        }
+
+        .cart-summary {
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .cart-total {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .checkout-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #EE1C47;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background-color: #d41a3f;
+        }
+
+        @media (max-width: 768px) {
+            .cart-table {
+                font-size: 14px;
+            }
+
+            .cart-table th,
+            .cart-table td {
+                padding: 10px;
+            }
+
+            .cart-item-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .quantity-input {
+                width: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="cart-title">Your Shopping Cart</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="/placeholder.svg?height=80&width=80" alt="Bengali Style Saree" class="cart-item-image">
+                        <span class="cart-item-name">Bengali Style Saree</span>
+                    </td>
+                    <td class="cart-item-price">₹500</td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td class="cart-item-price">₹500</td>
+                    <td>
+                        <i class='bx bx-trash remove-item'></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="/placeholder.svg?height=80&width=80" alt="Crop Black Coloured Top" class="cart-item-image">
+                        <span class="cart-item-name">Crop Black Coloured Top</span>
+                    </td>
+                    <td class="cart-item-price">₹1,020</td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td class="cart-item-price">₹1,020</td>
+                    <td>
+                        <i class='bx bx-trash remove-item'></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="/placeholder.svg?height=80&width=80" alt="Woolen Sweater" class="cart-item-image">
+                        <span class="cart-item-name">Woolen Sweater</span>
+                    </td>
+                    <td class="cart-item-price">₹799</td>
+                    <td>
+                        <input type="number" value="2" min="1" class="quantity-input">
+                    </td>
+                    <td class="cart-item-price">₹1,598</td>
+                    <td>
+                        <i class='bx bx-trash remove-item'></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p class="cart-total">Total: ₹3,118</p>
+            <a href="#" class="checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+</body>
+</html>

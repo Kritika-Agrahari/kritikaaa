@@ -1,0 +1,188 @@
+import { useState } from 'react'
+import { Heart, Star } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+
+interface Product {
+  id: number
+  name: string
+  price: number
+  image: string
+  category: string
+  rating: number
+  sale?: boolean
+  new?: boolean
+}
+
+const products: Product[] = [
+  {
+    id: 1,
+    name: "Bengali Style Saree",
+    price: 500,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Sarees",
+    rating: 4.5,
+    sale: true
+  },
+  {
+    id: 2,
+    name: "Crop Black Coloured Top",
+    price: 1020,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Tops",
+    rating: 4.5,
+    new: true
+  },
+  {
+    id: 3,
+    name: "Banarasi Saree",
+    price: 5000,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Sarees",
+    rating: 5
+  },
+  {
+    id: 4,
+    name: "Woolen Sweater",
+    price: 799,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Sweaters",
+    rating: 4.5,
+    sale: true
+  },
+  {
+    id: 5,
+    name: "Velvet Sharara Set",
+    price: 3000,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Dresses",
+    rating: 4.5
+  },
+  {
+    id: 6,
+    name: "Fashionable Lehenga",
+    price: 2999,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Dresses",
+    rating: 4.5
+  },
+  {
+    id: 7,
+    name: "Pure Silk Fabric",
+    price: 7909,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Fabrics",
+    rating: 4.5
+  },
+  {
+    id: 8,
+    name: "Saram Shirt Piece Fabric",
+    price: 799,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Fabrics",
+    rating: 4.5
+  },
+  {
+    id: 9,
+    name: "Skinny Jeans",
+    price: 799,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Jeans",
+    rating: 4.5
+  },
+  {
+    id: 10,
+    name: "Blue Anarkali",
+    price: 2999,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Dresses",
+    rating: 4.5
+  },
+  {
+    id: 11,
+    name: "Manyavar Sherwani",
+    price: 7999,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Men's Wear",
+    rating: 4.5
+  },
+  {
+    id: 12,
+    name: "Kanjivaram Saree",
+    price: 7999,
+    image: "/placeholder.svg?height=300&width=200",
+    category: "Sarees",
+    rating: 4.5
+  }
+]
+
+export default function ProductGrid() {
+  const [favorites, setFavorites] = useState<number[]>([])
+
+  const toggleFavorite = (productId: number) => {
+    setFavorites(prevFavorites => 
+      prevFavorites.includes(productId)
+        ? prevFavorites.filter(id => id !== productId)
+        : [...prevFavorites, productId]
+    )
+  }
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {products.map((product) => (
+        <Card key={product.id} className="overflow-hidden">
+          <CardHeader className="p-0">
+            <div className="relative aspect-square">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+              />
+              {product.sale && (
+                <Badge className="absolute top-2 left-2 bg-green-500">
+                  Sale
+                </Badge>
+              )}
+              {product.new && (
+                <Badge className="absolute top-2 left-2 bg-blue-500">
+                  New
+                </Badge>
+              )}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+                onClick={() => toggleFavorite(product.id)}
+              >
+                <Heart className={favorites.includes(product.id) ? "fill-current" : ""} />
+                <span className="sr-only">Add to favorites</span>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="p-4">
+            <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
+            <p className="text-sm text-gray-500 mb-2">{product.category}</p>
+            <div className="flex items-center mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-4 h-4 ${
+                    i < Math.floor(product.rating)
+                      ? "text-yellow-400 fill-current"
+                      : "text-gray-300"
+                  }`}
+                />
+              ))}
+              <span className="ml-2 text-sm text-gray-600">{product.rating}</span>
+            </div>
+          </CardContent>
+          <CardFooter className="p-4 pt-0 flex justify-between items-center">
+            <p className="text-lg font-bold">₹{product.price.toLocaleString()}</p>
+            <Button>Add to Cart</Button>
+          </CardFooter>
+        </Card>
+      ))}
+    </div>
+  )
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALA JI FASHION - Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Jost', sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .docs-section {
+            padding: 50px 10%;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #EE1C47;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .doc-category {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .doc-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .doc-icon {
+            font-size: 36px;
+            color: #EE1C47;
+            margin-bottom: 15px;
+        }
+
+        .doc-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .doc-list {
+            list-style-type: none;
+        }
+
+        .doc-list li {
+            margin-bottom: 10px;
+        }
+
+        .doc-list a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .doc-list a:hover {
+            color: #EE1C47;
+        }
+
+        .search-bar {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            background-color: #EE1C47;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #d41a3f;
+        }
+
+        @media (max-width: 768px) {
+            .docs-section {
+                padding: 30px 5%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .doc-category {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="docs-section">
+        <h2 class="section-title">Documentation</h2>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search documentation...">
+            <button class="search-button">
+                <i class='bx bx-search'></i>
+            </button>
+        </div>
+        <div class="docs-grid">
+            <div class="doc-category">
+                <i class='bx bx-purchase-tag doc-icon'></i>
+                <h3 class="doc-title">Shopping Guide</h3>
+                <ul class="doc-list">
+                    <li><a href="#">How to Place an Order</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Payment Methods</a></li>
+                    <li><a href="#">Tracking Your Order</a></li>
+                </ul>
+            </div>
+            <div class="doc-category">
+                <i class='bx bx-rotate-left doc-icon'></i>
+                <h3 class="doc-title">Returns & Exchanges</h3>
+                <ul class="doc-list">
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">How to Return an Item</a></li>
+                    <li><a href="#">Exchange Process</a></li>
+                    <li><a href="#">Refund Timeline</a></li>
+                </ul>
+            </div>
+            <div class="doc-category">
+                <i class='bx bx-help-circle doc-icon'></i>
+                <h3 class="doc-title">Customer Support</h3>
+                <ul class="doc-list">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Live Chat Support</a></li>
+                    <li><a href="#">Feedback & Suggestions</a></li>
+                </ul>
+            </div>
+            <div class="doc-category">
+                <i class='bx bx-user doc-icon'></i>
+                <h3 class="doc-title">Account Management</h3>
+                <ul class="doc-list">
+                    <li><a href="#">Creating an Account</a></li>
+                    <li><a href="#">Managing Your Profile</a></li>
+                    <li><a href="#">Wishlist Features</a></li>
+                    <li><a href="#">Newsletter Subscription</a></li>
+                </ul>
+            </div>
+            <div class="doc-category">
+                <i class='bx bx-gift doc-icon'></i>
+                <h3 class="doc-title">Promotions & Loyalty</h3>
+                <ul class="doc-list">
+                    <li><a href="#">Current Offers</a></li>
+                    <li><a href="#">Loyalty Program</a></li>
+                    <li><a href="#">Referral Bonuses</a></li>
+                    <li><a href="#">Seasonal Sales</a></li>
+                </ul>
+            </div>
+            <div class="doc-category">
+                <i class='bx bx-shield doc-icon'></i>
+                <h3 class="doc-title">Privacy & Security</h3>
+                <ul class="doc-list">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Secure Shopping</a></li>
+                    <li><a href="#">Data Protection</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

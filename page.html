@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALA JI FASHION - Important Pages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Jost', sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+        }
+
+        .pages-section {
+            padding: 50px 10%;
+            background-color: #f8f8f8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #111;
+        }
+
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .page-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .page-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .page-icon {
+            font-size: 36px;
+            color: #EE1C47;
+            margin-bottom: 15px;
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .page-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .page-link {
+            display: inline-block;
+            background-color: #EE1C47;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .page-link:hover {
+            background-color: #d41a3f;
+        }
+
+        @media (max-width: 768px) {
+            .pages-section {
+                padding: 30px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="pages-section">
+        <h2 class="section-title">Important Pages</h2>
+        <div class="pages-grid">
+            <div class="page-card">
+                <i class='bx bx-info-circle page-icon'></i>
+                <h3 class="page-title">About Us</h3>
+                <p class="page-description">Learn about our story, mission, and values.</p>
+                <a href="#" class="page-link">Visit Page</a>
+            </div>
+            <div class="page-card">
+                <i class='bx bx-envelope page-icon'></i>
+                <h3 class="page-title">Contact</h3>
+                <p class="page-description">Get in touch with our customer support team.</p>
+                <a href="#" class="page-link">Visit Page</a>
+            </div>
+            <div class="page-card">
+                <i class='bx bx-help-circle page-icon'></i>
+                <h3 class="page-title">FAQ</h3>
+                <p class="page-description">Find answers to frequently asked questions.</p>
+                <a href="#" class="page-link">Visit Page</a>
+            </div>
+            <div class="page-card">
+                <i class='bx bx-file page-icon'></i>
+                <h3 class="page-title">Terms & Conditions</h3>
+                <p class="page-description">Read our terms of service and policies.</p>
+                <a href="#" class="page-link">Visit Page</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
